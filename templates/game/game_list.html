@@ -1,0 +1,18 @@
+{% extends '_base.html'%}
+
+{% block content %}
+<button> <a href="{% url 'game_create'%}">add new game </a></button>
+<ul>
+    {% for game in object_list%}
+    <li>
+       <h1>{{game.title}}</h1>
+       <img src="{{game.img_url}}" alt="{{game.title}}" width="200px"/>
+       <h3>purchaser: {{game.purchaser.first_name}} {{game.purchaser.last_name}}</h3>
+       <p>{{game.description}}</p>
+       <button> <a href="{% url 'game_detail' game.pk %}">detail </a></button>
+       <button> <a href="{% url 'game_update' game.pk %}">update </a></button>
+       <button> <a href="{% url 'game_delete' game.pk %}">Delete </a></button>
+    </li>
+    {% endfor%}
+</ul>
+{% endblock content%}
