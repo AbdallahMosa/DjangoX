@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     # Local
     "accounts",
-    "pages",
+    "pages","game",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
